@@ -14,7 +14,23 @@ const parse = target => {
   }
 }
 
+const stringifyValues = target => {
+  return Object.entries(target).reduce((final, [key, value]) => {
+    final[key] = stringify(value)
+    return final
+  }, {})
+}
+
+const parseValues = target => {
+  return Object.entries(target).reduce((final, [key, value]) => {
+    final[key] = parse(value)
+    return final
+  }, {})
+}
+
 module.exports = {
+  stringifyValues,
+  parseValues,
   stringify,
   parse
 }

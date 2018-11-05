@@ -1,4 +1,4 @@
-const { stringify, parse } = require('../')
+const { stringify, parse, parseValues, stringifyValues } = require('../')
 
 describe('stringify', () => {
   test('it stringifies non-strings', () => {
@@ -24,5 +24,37 @@ describe('parse', () => {
   test('it skips out on non parseable shit', () => {
     expect(parse('yolo')).toEqual('yolo')
     expect(parse('[{]]')).toEqual('[{]]')
+  })
+})
+
+const mockStorage = {
+  a: '',
+  b: 0,
+  c: true,
+  d: null,
+  e: [1, 2, 3],
+  f: { stub: 'STUB' }
+}
+
+const mockStorageStringified = {
+  a: '',
+  b: '0',
+  c: 'true',
+  d: 'null',
+  e: '[1,2,3]',
+  f: '{"stub":"STUB"}'
+}
+
+describe('parseValues', () => {
+  const mock = stringifyValues(mockStorage)
+
+  test('it parses good', () => {
+    expect(parseValues(mockStorage)).toEqual(mockStorage)
+  })
+})
+
+describe('stringifyValues', () => {
+  test('it parses good', () => {
+    expect(stringifyValues(mockStorage)).toEqual(mockStorageStringified)
   })
 })
