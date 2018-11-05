@@ -1,10 +1,21 @@
 {
-  "name": "node-sandbox",
-  "version": "1.0.0",
-  "description": "Simple Node Sandbox",
+  "name": "storage-utilities",
+  "version": "0.0.0",
+  "description": "Utilities for working with local/sessionStorage.",
+  "keywords": [
+    "localStorage",
+    "sessionStorage",
+    "storage"
+  ],
   "main": "src/index.js",
-  "scripts": {
-    "start": "nodemon src/index.js localhost 8080"
+  "author": {
+    "name": "Colton Colcleasure",
+    "email": "colshacol@gmail.com",
+    "url": "https://github.com/colshacol"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colshacol/storage-utilities"
   },
   "dependencies": {},
   "devDependencies": {
