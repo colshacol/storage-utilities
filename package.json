@@ -18,7 +18,5 @@
     "url": "https://github.com/colshacol/storage-utilities"
   },
   "dependencies": {},
-  "devDependencies": {
-    "nodemon": "1.18.4"
-  }
+  "devDependencies": {}
 }
